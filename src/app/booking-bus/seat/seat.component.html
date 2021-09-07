@@ -1,0 +1,15 @@
+<ng-container *ngIf="!seat.TrangThai; else gheDaDuocChon">
+  <button
+    class="btn text-center m-1"
+    [ngStyle]="{ width: '40px', height: '40px' }"
+    [ngClass]="{ 'btn-success': status, 'btn-dark': !status }"
+    (click)="datGhe()"
+  >
+    {{ seat.SoGhe }}
+  </button>
+</ng-container>
+<ng-template #gheDaDuocChon>
+  <button class="btn btn-danger m-1" [ngStyle]="{ cursor: 'not-allowed' }">
+    {{ seat.SoGhe }}
+  </button>
+</ng-template>
